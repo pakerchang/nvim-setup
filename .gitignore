@@ -36,3 +36,6 @@
 
 .DS_Store
 
+
+nvim/after
+packer/
