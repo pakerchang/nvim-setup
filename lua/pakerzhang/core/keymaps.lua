@@ -56,3 +56,9 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- Custom key
+-- terminal opening
+-- keymap.set("n", "<leader>ti", ":terminal<CR>")
+-- Clear search highlight with <leader> and c
+keymap.set("n", "<leader>cl", ":nohl<CR>")

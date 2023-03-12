@@ -28,12 +28,16 @@ end
 
 -- add list of plugins to install
 return packer.startup(function(use)
+  -- colors theme
+  use({ "ellisonleao/gruvbox.nvim" })
+  use("savq/melange-nvim")
   -- packer can manage itself
   use("wbthomason/packer.nvim")
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
   use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+  use("Mofiqul/dracula.nvim")
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -100,6 +104,8 @@ return packer.startup(function(use)
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
+  -- toggle terminal
+  use({ "akinsho/toggleterm.nvim" })
   if packer_bootstrap then
     require("packer").sync()
   end

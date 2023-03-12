@@ -22,6 +22,7 @@ telescope.setup({
       },
     },
   },
+  file_ignore_patterns = {},
 })
 
 telescope.load_extension("fzf")
