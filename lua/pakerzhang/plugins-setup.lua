@@ -105,7 +105,7 @@ return packer.startup(function(use)
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
   -- toggle terminal
-  -- use({ "akinsho/toggleterm.nvim" })
+  use({ "akinsho/toggleterm.nvim" })
 
   -- coc nvim
   -- use({ "neoclide/coc.nvim", branch = "release" })

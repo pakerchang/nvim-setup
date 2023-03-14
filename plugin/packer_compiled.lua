@@ -221,6 +221,11 @@ _G.packer_plugins = {
     path = "/Users/pakerchang/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/Users/pakerchang/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["typescript.nvim"] = {
     loaded = true,
     path = "/Users/pakerchang/.local/share/nvim/site/pack/packer/start/typescript.nvim",

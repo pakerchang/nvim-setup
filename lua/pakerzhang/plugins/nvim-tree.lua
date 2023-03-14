@@ -24,6 +24,10 @@ nvimtree.setup({
       },
     },
   },
+  -- side explorer display
+  view = {
+    side = "right",
+  },
   -- disable window_picker for
   -- explorer to work well with
   -- window splits
@@ -34,7 +38,7 @@ nvimtree.setup({
       },
     },
   },
-  -- 	git = {
-  -- 		ignore = false,
-  -- 	},
+  git = {
+    ignore = false,
+  },
 })
