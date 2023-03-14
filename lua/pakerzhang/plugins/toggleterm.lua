@@ -7,7 +7,7 @@ toggleterm.setup({
   size = 20,
   open_mapping = [[<leader>ti]],
   hide_numbers = true,
-  direction = "horizontal", -- "horizontal" | "tab" | "float"
+  direction = "float", -- "horizontal" | "tab" | "float"
   insert_mappings = true,
   start_in_insert = true,
   close_on_exit = true,

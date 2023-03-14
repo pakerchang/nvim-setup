@@ -14,15 +14,31 @@ end
 telescope.setup({
   -- configure custom mappings
   defaults = {
+    prompt_prefix = "",
     mappings = {
       i = {
-        ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-        ["<C-j>"] = actions.move_selection_next, -- move to next result
+        ["k"] = actions.move_selection_previous, -- move to prev result
+        ["j"] = actions.move_selection_next, -- move to next result
         ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist, -- send selected to quickfixlist
       },
     },
+    file_ignore_patterns = { "node_modules/*", ".git/*", "public/*", "dist/*" },
+    layout_strategy = "horizontal",
+    layout_config = {
+      prompt_position = "bottom",
+      horizontal = {
+        mirror = false,
+      },
+      vertical = {
+        mirror = false,
+      },
+    },
   },
-  file_ignore_patterns = {},
+  pickers = {
+    find_files = {
+      hidden = true,
+    },
+  },
 })
 
 telescope.load_extension("fzf")

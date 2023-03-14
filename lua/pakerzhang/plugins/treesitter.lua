@@ -20,6 +20,7 @@ treesitter.setup({
     "javascript",
     "typescript",
     "tsx",
+    "vue",
     "yaml",
     "html",
     "css",

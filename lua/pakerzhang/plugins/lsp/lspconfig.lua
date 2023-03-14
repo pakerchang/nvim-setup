@@ -67,7 +67,7 @@ typescript.setup({
   server = {
     capabilities = capabilities,
     on_attach = on_attach,
-    -- filetypes = { "javascriptreact", "typescriptreact", "javascript", "typescript", "vue" },
+    filetypes = { "javascriptreact", "typescriptreact", "javascript", "typescript" },
   },
 })
 
@@ -81,7 +81,7 @@ lspconfig["cssls"].setup({
 lspconfig["tailwindcss"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
+  filetypes = { "html", "typescriptreact", "javascripreact", "css", "sass", "scss", "less", "svelte", "vue" },
 })
 
 -- configure emmet language server
@@ -89,6 +89,12 @@ lspconfig["emmet_ls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
+})
+
+lspconfig["volar"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "vue" },
 })
 
 -- configure lua server (with special settings)
