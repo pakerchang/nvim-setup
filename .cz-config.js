@@ -5,7 +5,7 @@ module.exports = {
     { value: "docs", name: "docs: 修改文件" },
     { value: "del", name: "del: 刪除" },
   ],
-  scopes: [{ name: "Documents" }, { name: "settings" }],
+  scopes: [{ name: "Documents" }, { name: "Settings" }],
   messages: {
     type: "選擇更改類型:\n",
     scope: "選擇 scope（Options）：\n",
