@@ -96,11 +96,11 @@ lspconfig["volar"].setup({
   filetypes = { "vue" },
 })
 
-lspconfig["denols"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  filetypes = { "ts" },
-})
+-- lspconfig["denols"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+--   filetypes = { "ts" },
+-- })
 
 lspconfig["marksman"].setup({
   capabilities = capabilities,
