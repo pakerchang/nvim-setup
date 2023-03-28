@@ -36,6 +36,7 @@
 
 .DS_Store
 
-
 nvim/after
 packer/
+plugin/packer_compiled.lua
+.cz-config.cjs

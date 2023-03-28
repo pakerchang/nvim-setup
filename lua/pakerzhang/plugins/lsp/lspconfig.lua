@@ -9,7 +9,6 @@ local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
   return
 end
-
 -- import typescript plugin safely
 local typescript_setup, typescript = pcall(require, "typescript")
 if not typescript_setup then
@@ -95,6 +94,30 @@ lspconfig["volar"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { "vue" },
+})
+
+lspconfig["denols"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "ts" },
+})
+
+lspconfig["marksman"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "md" },
+})
+
+lspconfig["yamlls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "yaml", "yml" },
+})
+
+lspconfig["rust_analyzer"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { "rs" },
 })
 
 -- configure lua server (with special settings)

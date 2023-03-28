@@ -32,12 +32,9 @@ return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
   -- colors theme
-  use({ "ellisonleao/gruvbox.nvim" })
-  use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
+  use("joshdick/onedark.vim")
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
-
-  use("Mofiqul/dracula.nvim")
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -112,6 +109,9 @@ return packer.startup(function(use)
 
   -- bufferline
   use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
+
+  -- prefme color highlight
+  use("norcalli/nvim-colorizer.lua")
 
   if packer_bootstrap then
     require("packer").sync()
