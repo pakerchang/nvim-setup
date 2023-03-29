@@ -1,4 +1,5 @@
 module.exports = {
+  questions: ["type", "scope", "subject", "body", "issue"],
   types: [
     { value: "feat", name: "feat: 增加" },
     { value: "fix", name: "fix: bug fix" },
