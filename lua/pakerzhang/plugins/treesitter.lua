@@ -6,17 +6,6 @@ end
 
 -- configure treesitter
 treesitter.setup({
-  -- enable syntax highlighting
-  highlight = { enable = true },
-  -- rainbow = {
-  --   enable = true,
-  --   extended_mode = true,
-  --   max_file_lines = 1000,
-  -- },
-  -- enable indentation
-  indent = { enable = true },
-  -- enable autotagging (w/ nvim-ts-autotag plugin)
-  autotag = { enable = true },
   -- ensure these language parsers are installed
   ensure_installed = {
     "json",
@@ -34,8 +23,20 @@ treesitter.setup({
     "vim",
     "Dockerfile",
     "gitignore",
-    "jsdoc",
   },
+  -- enable syntax highlighting
+  highlight = { enable = true, disable = {} },
+  -- rainbow = {
+  --   enable = true,
+  --   extended_mode = true,
+  --   max_file_lines = 1000,
+  -- },
+  -- enable indentation
+  indent = { enable = true, disable = {} },
+  -- enable autotagging (w/ nvim-ts-autotag plugin)
+  autotag = { enable = true },
   -- auto install above language parsers
   auto_install = true,
 })
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.tsx.filetype_to_parsername = { "javascript.jsx", "typescript.tsx" }
