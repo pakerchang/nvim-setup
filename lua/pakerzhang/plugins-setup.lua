@@ -93,6 +93,7 @@ return packer.startup(function(use)
       ts_update()
     end,
   })
+  use("HiPhish/nvim-ts-rainbow2")
 
   -- auto closing
   use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...

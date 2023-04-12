@@ -8,6 +8,11 @@ end
 treesitter.setup({
   -- enable syntax highlighting
   highlight = { enable = true },
+  -- rainbow = {
+  --   enable = true,
+  --   extended_mode = true,
+  --   max_file_lines = 1000,
+  -- },
   -- enable indentation
   indent = { enable = true },
   -- enable autotagging (w/ nvim-ts-autotag plugin)

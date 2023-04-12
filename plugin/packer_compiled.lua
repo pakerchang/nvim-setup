@@ -191,6 +191,11 @@ _G.packer_plugins = {
     path = "/Users/pakerchang/.local/share/nvim/site/pack/packer/opt/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
   },
+  ["nvim-ts-rainbow2"] = {
+    loaded = true,
+    path = "/Users/pakerchang/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow2",
+    url = "https://github.com/HiPhish/nvim-ts-rainbow2"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/pakerchang/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
