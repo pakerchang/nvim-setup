@@ -1,5 +1,5 @@
 -- set leader key to space
-vim.g.mapleader = " "
+vim.g.mapleader = "kk"
 
 local keymap = vim.keymap -- for conciseness
 

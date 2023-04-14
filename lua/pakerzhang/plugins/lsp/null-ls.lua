@@ -19,7 +19,10 @@ null_ls.setup({
     formatting.prettier,
     formatting.stylua, -- lua formatter
     diagnostics.eslint_d.with({
-      diagnostics_format = "[eslint] #{m}\n(#{c})",
+      condition = function(utils)
+        return utils.root_has_file({ ".eslintrc.js", ".eslintrc", ".eslintrc.json", ".eslintrc.cjs" })
+      end,
+      diagnostics_format = "eslint: #{m}\n(#{c})",
     }),
   },
   -- configure format on save
