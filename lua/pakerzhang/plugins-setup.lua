@@ -89,10 +89,7 @@ return packer.startup(function(use)
   -- treesitter configuration
   use({
     "nvim-treesitter/nvim-treesitter",
-    run = function()
-      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-      ts_update()
-    end,
+    run = ":TSUpdate",
   })
   use("HiPhish/nvim-ts-rainbow2")
 
@@ -106,9 +103,6 @@ return packer.startup(function(use)
   -- toggle terminal
   use({ "akinsho/toggleterm.nvim" })
 
-  -- coc nvim
-  -- use({ "neoclide/coc.nvim", branch = "release" })
-
   -- bufferline
   use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 
@@ -117,6 +111,9 @@ return packer.startup(function(use)
 
   -- indent blankline
   use("lukas-reineke/indent-blankline.nvim")
+
+  -- dashboard
+  use({ "goolord/alpha-nvim", requires = { "kyazdani42/nvim-web-devicons" } })
 
   if packer_bootstrap then
     require("packer").sync()

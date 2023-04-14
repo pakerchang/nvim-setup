@@ -10,7 +10,8 @@ bufferline.setup({
     diagnostics = "nvim_lsp",
     mode = "tabs",
     separator_style = "slant",
-    always_show_bufferline = true,
+    -- always_show_bufferline = true,
+    always_show_bufferline = false,
     show_buffer_close_icons = false,
     color_icons = true,
     offsets = {
@@ -23,13 +24,23 @@ bufferline.setup({
     },
   },
   highlights = {
+    separator = {
+      fg = "#073642",
+      bg = "#002b36",
+    },
+    separator_selected = {
+      fg = "#073642",
+    },
+    background = {
+      fg = "#657b83",
+      bg = "#002b36",
+    },
     buffer_selected = {
-      -- fg = "#fdf6e3",
+      fg = "#fdf6e3",
       bold = true,
-      italic = true,
+    },
+    fill = {
+      bg = "#073642",
     },
   },
 })
-
-vim.keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", {})
-vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", {})

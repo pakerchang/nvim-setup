@@ -1,8 +1,15 @@
--- set leader key to space
+--vset leader key to space
 vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
 
+-- Modes
+--   normal_mode = "n",
+--   insert_mode = "i",
+--   visual_mode = "v",
+--   visual_block_mode = "x",
+--   term_mode = "t",
+--   command_mode = "c",
 ---------------------
 -- General Keymaps
 ---------------------
@@ -26,10 +33,14 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>sr", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>se", ":close<CR>") -- close current split window
 
+-- resize
+keymap.set("n", "<C-t><C-l>", ":vertical resize -30<CR>")
+keymap.set("n", "<C-t><C-r>", ":vertical resize +30<CR>")
+
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>te", ":tabclose<CR>") -- close current tab
--- keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
--- keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
+keymap.set("n", "<Tab>", ":tabn<CR>") --  go to next tab
+keymap.set("n", "<S-Tab>", ":tabp<CR>") --  go to previous tab
 
 ----------------------
 -- Plugin Keybinds
