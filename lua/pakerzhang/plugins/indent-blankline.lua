@@ -16,9 +16,11 @@ blankline.setup({
     "markdown",
     "toggleterm",
     "dashboard",
+    "text",
+    "NvimTree",
   },
   buftype_exclude = {
     "terminal",
-    -- "nofile",
+    "nofile",
   },
 })
