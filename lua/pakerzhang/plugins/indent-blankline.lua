@@ -5,6 +5,7 @@ end
 
 blankline.setup({
   space_char_blankline = " ",
+
   use_treesitter = true,
   show_current_context = true,
   show_current_context_start = true,
@@ -15,12 +16,9 @@ blankline.setup({
     "markdown",
     "toggleterm",
     "dashboard",
-    "lspinfo",
-    "text",
-    "NvimTree",
   },
   buftype_exclude = {
     "terminal",
-    "nofile",
+    -- "nofile",
   },
 })

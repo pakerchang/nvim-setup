@@ -7,24 +7,23 @@ end
 -- configure treesitter
 treesitter.setup({
   -- ensure these language parsers are installed
-  ensure_install = "all",
-  -- ensure_installed = {
-  --   "json",
-  --   "javascript",
-  --   "typescript",
-  --   "tsx",
-  --   "vue",
-  --   "yaml",
-  --   "html",
-  --   "css",
-  --   "markdown",
-  --   "markdown_inline",
-  --   "graphql",
-  --   "lua",
-  --   "vim",
-  --   "Dockerfile",
-  --   "gitignore",
-  -- },
+  ensure_installed = {
+    "json",
+    "javascript",
+    "typescript",
+    "tsx",
+    "vue",
+    "yaml",
+    "html",
+    "css",
+    "markdown",
+    "markdown_inline",
+    "graphql",
+    "lua",
+    "vim",
+    "Dockerfile",
+    "gitignore",
+  },
   -- enable syntax highlighting
   highlight = { enable = true, disable = {} },
   -- enable indentation
