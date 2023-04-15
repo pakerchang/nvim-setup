@@ -14,6 +14,13 @@ end
 
 local dashboard = require("alpha.themes.dashboard")
 
+-- align
+local function align(str)
+  local width = vim.api.nvim_win_get_width(0)
+  local shift = math.floor(width / 2) - math.floor(string.len(str) / 2)
+  return string.rep(" ", shift) .. str
+end
+
 -- Footer
 local function footer()
   local version = vim.version()
@@ -26,12 +33,30 @@ end
 -- Banner
 local banner = {
   "                                                    ",
+  "                                                    ",
+  "                                                    ",
+  "                                                    ",
+  "                                                    ",
+  "                                                    ",
+  "                                                    ",
+  "                                                    ",
+  "                                                    ",
+  "                                                    ",
+
   " ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+
   " ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+
   " ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+
   " ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+
   " ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+
   " ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+  "                                                    ",
+  "                                                    ",
+  "                                                    ",
   "                                                    ",
 }
 
