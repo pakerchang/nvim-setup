@@ -70,3 +70,6 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 
 -- Clear search highlight with <leader> and c
 keymap.set("n", "<leader>cl", ":nohl<CR>")
+
+-- markdown preview
+keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<CR>")

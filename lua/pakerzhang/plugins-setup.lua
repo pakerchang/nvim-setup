@@ -115,6 +115,16 @@ return packer.startup(function(use)
   -- dashboard
   use({ "goolord/alpha-nvim", requires = { "kyazdani42/nvim-web-devicons" } })
 
+  -- markdown preview
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  })
+
+  use({ "norcalli/nvim-colorizer.lua" })
+
   if packer_bootstrap then
     require("packer").sync()
   end
