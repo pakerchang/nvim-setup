@@ -17,6 +17,10 @@ local keymap = vim.keymap -- for conciseness
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>")
 
+-- Editor shortcuts
+keymap.set("n", "<leader>qq", ":qa<CR>")
+keymap.set("n", "<leader>wq", ":wq<CR>")
+
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
