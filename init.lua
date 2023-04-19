@@ -1,24 +1,19 @@
-require("pakerzhang.plugins-setup")
-require("pakerzhang.core.keymaps")
-require("pakerzhang.core.options")
-require("pakerzhang.core.colorscheme")
-require("pakerzhang.core.autocmd")
-require("pakerzhang.plugins.comment")
-require("pakerzhang.plugins.nvim-tree")
-require("pakerzhang.plugins.lualine")
-require("pakerzhang.plugins.telescope")
-require("pakerzhang.plugins.nvim-cmp")
-require("pakerzhang.plugins.lsp.mason")
-require("pakerzhang.plugins.lsp.lspsaga")
-require("pakerzhang.plugins.lsp.lspconfig")
-require("pakerzhang.plugins.lsp.null-ls")
-require("pakerzhang.plugins.autopairs")
-require("pakerzhang.plugins.treesitter")
-require("pakerzhang.plugins.gitsigns")
-require("pakerzhang.plugins.bufferline")
-require("pakerzhang.plugins.autotag")
-require("pakerzhang.plugins.prettier")
-require("pakerzhang.plugins.toggleterm")
-require("pakerzhang.plugins.indent-blankline")
-require("pakerzhang.plugins.alpha-nvim")
-require("pakerzhang.plugins.colorizer")
+require('craftzdog.base')
+require('craftzdog.highlights')
+require('craftzdog.maps')
+require('craftzdog.plugins')
+
+local has = vim.fn.has
+local is_mac = has "macunix"
+local is_win = has "win32"
+local is_wsl = has "wsl"
+
+if is_mac then
+  require('craftzdog.macos')
+end
+if is_win then
+  require('craftzdog.windows')
+end
+if is_wsl then
+  require('craftzdog.wsl')
+end
