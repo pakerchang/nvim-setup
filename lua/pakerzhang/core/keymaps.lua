@@ -21,6 +21,9 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "<leader>qq", ":qa<CR>")
 keymap.set("n", "<leader>wq", ":wq<CR>")
 
+-- leave terminal mode
+keymap.set("t", "<C-i>", "<C-\\><C-n>")
+
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
