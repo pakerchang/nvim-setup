@@ -21,21 +21,21 @@ mason.setup()
 
 mason_lspconfig.setup({
   -- list of servers for mason to install
-  ensure_installed = {
-    "tsserver",
-    "html",
-    "cssls",
-    "tailwindcss",
-    "lua_ls",
-    "emmet_ls",
-    "volar",
-    "denols",
-    "yamlls",
-    "marksman",
-    "rust_analyzer",
-    "dockerls",
-    "docker_compose_language_service",
-  },
+  -- ensure_installed = {
+  --   "tsserver",
+  --   "html",
+  --   "cssls",
+  --   "tailwindcss",
+  --   "lua_ls",
+  --   "emmet_ls",
+  --   "volar",
+  --   "denols",
+  --   "yamlls",
+  --   "marksman",
+  --   "rust_analyzer",
+  --   "dockerls",
+  --   "docker_compose_language_service",
+  -- },
   -- auto-install configured servers (with lspconfig)
   automatic_installation = true, -- not the same as ensure_installed
 })
