@@ -26,7 +26,8 @@ nvimtree.setup({
   },
   -- side explorer display
   view = {
-    side = "right",
+    side = "right", -- left | right
+    width = 35,
   },
   -- disable window_picker for
   -- explorer to work well with

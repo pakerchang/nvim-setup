@@ -17,6 +17,9 @@ end
 
 local protocol = require("vim.lsp.protocol")
 
+local capab = protocol.make_client_capabilities()
+capab.textDocument.dynamicRegistration = true
+
 local keymap = vim.keymap -- for conciseness
 
 protocol.CompletionItemKind = {
@@ -46,6 +49,7 @@ protocol.CompletionItemKind = {
   "ﬦ", -- Operator
   "", -- TypeParameter
 }
+
 -- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
   -- keybind options
@@ -98,19 +102,18 @@ vim.diagnostic.config({
   },
 })
 
--- configure html server
-lspconfig["html"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
-
 -- configure typescript server with plugin
 typescript.setup({
   server = {
     capabilities = capabilities,
     on_attach = on_attach,
-    filetypes = { "javascriptreact", "typescriptreact", "javascript", "typescript" },
   },
+})
+
+-- configure html server
+lspconfig["html"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
 })
 
 -- configure css server
@@ -123,44 +126,37 @@ lspconfig["cssls"].setup({
 lspconfig["tailwindcss"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "html", "typescriptreact", "javascripreact", "css", "sass", "scss", "less", "svelte", "vue" },
 })
 
 -- configure emmet language server
 lspconfig["emmet_ls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "vue" },
 })
 
 lspconfig["volar"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "vue" },
 })
-
--- lspconfig["denols"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach,
---   filetypes = { "ts" },
--- })
 
 lspconfig["marksman"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "md" },
 })
 
 lspconfig["yamlls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "yaml", "yml" },
 })
 
-lspconfig["rust_analyzer"].setup({
+-- docker, docker compose
+lspconfig["dockerls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
-  filetypes = { "rs" },
+})
+lspconfig["docker_compose_language_service"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
 })
 
 -- configure lua server (with special settings)
@@ -182,13 +178,4 @@ lspconfig["lua_ls"].setup({
       },
     },
   },
-})
--- docker, docker compose
-lspconfig["dockerls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
-lspconfig["docker_compose_language_service"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
 })
