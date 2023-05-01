@@ -9,12 +9,22 @@ treesitter.setup({
   -- ensure these language parsers are installed
   ensure_installed = "all",
   -- enable syntax highlighting
-  highlight = { enable = true, disable = { "html", "vue" } },
+  highlight = {
+    enable = true,
+    disable = { "vue" },
+  },
   -- enable indentation
-  indent = { enable = true, disable = { "markdown" } },
+  indent = {
+    enable = false,
+  },
+  context_commentstring = {
+    enable = true,
+  },
   -- enable autotagging (w/ nvim-ts-autotag plugin)
-  autotag = { enable = true },
-  -- auto install above language parsers
+  autotag = {
+    enable = true,
+  },
+  -- auto ihstall above language parsers
   sync_install = false,
   auto_install = true,
 })

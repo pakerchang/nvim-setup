@@ -1,5 +1,6 @@
 local status, prettier = pcall(require, "prettier")
 if not status then
+  print("prettier is not loading")
   return
 end
 
