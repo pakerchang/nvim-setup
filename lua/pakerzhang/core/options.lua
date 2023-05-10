@@ -12,7 +12,7 @@ opt.autoindent = true -- copy indent from current line when starting new one
 opt.breakindent = true -- break new line with save
 
 -- line wrapping
-opt.wrap = false -- disable line wrapping
+opt.wrap = true -- disable line wrapping
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
