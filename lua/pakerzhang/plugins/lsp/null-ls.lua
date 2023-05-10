@@ -20,7 +20,14 @@ null_ls.setup({
     formatting.stylua, -- lua formatter
     diagnostics.eslint_d.with({
       condition = function(utils)
-        return utils.root_has_file({ ".eslintrc.js", ".eslintrc", ".eslintrc.json", ".eslintrc.cjs" })
+        return utils.root_has_file({
+          ".eslintrc.js",
+          ".eslintrc",
+          ".eslintrc.json",
+          ".eslintrc.cjs,",
+          ".eslintrc.yml",
+          ".eslintrc.yaml",
+        })
       end,
       diagnostics_format = "eslint: #{m}\n(#{c})",
     }),

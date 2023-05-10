@@ -6,12 +6,9 @@ end
 
 -- configure treesitter
 treesitter.setup({
-  -- ensure these language parsers are installed
-  ensure_installed = "all",
   -- enable syntax highlighting
   highlight = {
     enable = true,
-    disable = { "vue" },
   },
   -- enable indentation
   indent = {
@@ -24,8 +21,8 @@ treesitter.setup({
   autotag = {
     enable = true,
   },
-  -- auto ihstall above language parsers
-  sync_install = false,
+  -- ensure these language parsers are installed
+  ensure_installed = "all",
   auto_install = true,
 })
 
