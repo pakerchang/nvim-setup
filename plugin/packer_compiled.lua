@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/pakerchang/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/Users/pakerchang/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/pakerchang/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -216,10 +221,10 @@ _G.packer_plugins = {
     path = "/Users/pakerchang/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
-  ["onedark.vim"] = {
+  ["onedarkpro.nvim"] = {
     loaded = true,
-    path = "/Users/pakerchang/.local/share/nvim/site/pack/packer/start/onedark.vim",
-    url = "https://github.com/joshdick/onedark.vim"
+    path = "/Users/pakerchang/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
+    url = "https://github.com/olimorris/onedarkpro.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
