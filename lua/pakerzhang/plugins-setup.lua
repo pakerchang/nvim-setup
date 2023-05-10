@@ -32,9 +32,9 @@ return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
   -- colors theme
-  -- use("joshdick/onedark.vim")
   use({ "ellisonleao/gruvbox.nvim" })
-  use({ "olimorris/onedarkpro.nvim", priorty = 1000 })
+  use("rebelot/kanagawa.nvim")
+  use("joshdick/onedark.vim")
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
