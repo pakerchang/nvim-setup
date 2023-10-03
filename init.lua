@@ -1,3 +1,9 @@
+if vim.g.vscode then
+  -- VSCode extension
+else
+  -- ordinary Neovim
+end
+
 require("pakerzhang.plugins-setup")
 require("pakerzhang.core.keymaps")
 require("pakerzhang.core.options")

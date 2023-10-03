@@ -25,7 +25,7 @@ keymap.set("n", "<leader>wq", ":wq<CR>")
 keymap.set("t", "<C-i>", "<C-\\><C-n>")
 
 -- Clear search highlights
-keymap.set("n", "<leader>nh", ":nohl<CR>")
+keymap.set("n", "<leader>cl", ":nohl<CR>")
 
 -- Delete single character without copying into register
 keymap.set("n", "x", '"_x')
@@ -74,9 +74,6 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- Restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
-
--- Clear search highlight with <leader> and c
-keymap.set("n", "<leader>cl", ":nohl<CR>")
 
 -- Markdown Preview
 keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<CR>")
