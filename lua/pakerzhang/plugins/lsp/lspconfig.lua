@@ -103,11 +103,9 @@ end
 -- })
 
 -- configure typescript server with plugin
-typescript.setup({
-  server = {
-    capabilities = capabilities,
-    on_attach = on_attach,
-  },
+lspconfig["ts_ls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
 })
 
 -- configure html server

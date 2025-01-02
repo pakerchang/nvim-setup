@@ -1,9 +1,3 @@
-if vim.g.vscode then
-  -- VSCode extension
-else
-  -- ordinary Neovim
-end
-
 require("pakerzhang.plugins-setup")
 require("pakerzhang.core.keymaps")
 require("pakerzhang.core.options")
@@ -25,6 +19,6 @@ require("pakerzhang.plugins.bufferline")
 require("pakerzhang.plugins.autotag")
 require("pakerzhang.plugins.prettier")
 require("pakerzhang.plugins.toggleterm")
-require("pakerzhang.plugins.indent-blankline")
+-- require("pakerzhang.plugins.indent-blankline")
 require("pakerzhang.plugins.alpha-nvim")
 require("pakerzhang.plugins.colorizer")

@@ -112,7 +112,7 @@ return packer.startup(function(use)
   use("norcalli/nvim-colorizer.lua")
 
   -- indent blankline
-  use("lukas-reineke/indent-blankline.nvim")
+  -- use("lukas-reineke/indent-blankline.nvim")
 
   -- dashboard
   use({ "goolord/alpha-nvim", requires = { "kyazdani42/nvim-web-devicons" } })
