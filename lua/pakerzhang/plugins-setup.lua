@@ -68,8 +68,13 @@ require("lazy").setup({
   { "jay-babu/mason-null-ls.nvim" },
   { "MunifTanjim/prettier.nvim" },
 
-  -- treesitter
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  -- treesitter (main branch — master archived)
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
+    build = ":TSUpdate",
+  },
   { "HiPhish/rainbow-delimiters.nvim" },
 
   -- auto pairs / tags
