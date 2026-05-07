@@ -17,16 +17,20 @@ fzf.setup({
         .. [[--smart-case --max-columns=4096 ]]
         .. [[--glob=!node_modules --glob=!.git --glob=!public --glob=!dist]],
   },
-  -- 在 fzf prompt 內的快捷鍵：對齊 telescope 舊習慣
+  -- ctrl+hjkl 一致：list 走 j/k，preview 走 h/l
   keymap = {
     fzf = {
-      ["ctrl-k"] = "up",                  -- 上一筆
-      ["ctrl-j"] = "down",                -- 下一筆
-      ["ctrl-q"] = "select-all+accept",   -- 全選送 quickfix
+      ["ctrl-k"] = "up",                    -- 上一筆 (list)
+      ["ctrl-j"] = "down",                  -- 下一筆 (list)
+      ["ctrl-h"] = "preview-page-up",       -- preview 上一頁
+      ["ctrl-l"] = "preview-page-down",     -- preview 下一頁
+      ["ctrl-q"] = "select-all+accept",     -- 全選送 quickfix
     },
     builtin = {
       ["<C-k>"] = "preview-page-up",
       ["<C-j>"] = "preview-page-down",
+      ["<C-h>"] = "preview-page-up",
+      ["<C-l>"] = "preview-page-down",
     },
   },
 })
