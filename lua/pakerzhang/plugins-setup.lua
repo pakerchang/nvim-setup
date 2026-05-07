@@ -39,9 +39,8 @@ require("lazy").setup({
   -- statusline
   { "nvim-lualine/lualine.nvim" },
 
-  -- fuzzy finding
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-  { "nvim-telescope/telescope.nvim",            branch = "0.1.x" },
+  -- fuzzy finding (fzf-lua: fzf binary backed, faster than telescope)
+  { "ibhagwan/fzf-lua",                         dependencies = { "nvim-tree/nvim-web-devicons" } },
 
   -- autocompletion
   { "hrsh7th/nvim-cmp" },
@@ -86,8 +85,8 @@ require("lazy").setup({
   -- bufferline
   { "akinsho/bufferline.nvim", version = "*", dependencies = { "nvim-tree/nvim-web-devicons" } },
 
-  -- color highlight
-  { "norcalli/nvim-colorizer.lua" },
+  -- color highlight (catgoose fork, norcalli original is unmaintained)
+  { "catgoose/nvim-colorizer.lua" },
 
   -- dashboard
   { "goolord/alpha-nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
