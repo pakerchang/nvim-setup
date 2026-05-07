@@ -77,3 +77,17 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 
 -- Markdown Preview
 keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<CR>")
+
+-- Reload personal Lua modules + re-source init.lua
+-- 跳過 plugins-setup 以避免重跑 lazy.setup() 造成 plugin 狀態錯亂
+-- 適合：改 keymap / option / plugin config 後快速試用
+-- 不適合：plugins-setup.lua 變動（請改用 :Lazy sync 後重啟）
+keymap.set("n", "<leader>R", function()
+  for name, _ in pairs(package.loaded) do
+    if name:match("^pakerzhang") and not name:match("plugins%-setup$") then
+      package.loaded[name] = nil
+    end
+  end
+  vim.cmd("source " .. vim.env.MYVIMRC)
+  vim.notify("Config reloaded", vim.log.levels.INFO)
+end, { desc = "Reload nvim config" })
