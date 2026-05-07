@@ -38,3 +38,4 @@
 
 nvim/after
 .cz-config.cjs
+.claude/settings.local.json
