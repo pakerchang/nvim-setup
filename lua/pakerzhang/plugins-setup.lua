@@ -44,6 +44,17 @@ require("lazy").setup({
   { "hrsh7th/cmp-buffer" },
   { "hrsh7th/cmp-path" },
 
+  -- copilot (lua port) + cmp source
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    dependencies = { "zbirenbaum/copilot.lua" },
+  },
+
   -- snippets
   { "L3MON4D3/LuaSnip" },
   { "saadparwaiz1/cmp_luasnip" },
@@ -102,11 +113,6 @@ require("lazy").setup({
 }, {
   ui = { border = "rounded" },
   install = { missing = true },
-  checker = { enabled = false },           -- 不自動檢查更新
-  change_detection = { enabled = false },  -- 不自動 reload on save
-  performance = {
-    rtp = {
-      reset = false,                       -- 保留你的 pack/github/start (copilot.vim)
-    },
-  },
+  checker = { enabled = false },          -- 不自動檢查更新
+  change_detection = { enabled = false }, -- 不自動 reload on save
 })
