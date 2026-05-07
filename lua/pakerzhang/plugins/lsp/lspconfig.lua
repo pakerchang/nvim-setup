@@ -59,6 +59,33 @@ vim.lsp.config("*", {
 })
 
 -- per-server overrides（合併在預設之上）
+
+-- Vue 3.x hybrid mode：vue_ls 處理 SFC 結構，ts_ls 處理 <script> 區塊的 TypeScript
+-- 條件：mason 已安裝 vue-language-server
+local vue_plugin_path = vim.fn.stdpath("data")
+    .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+
+vim.lsp.config("ts_ls", {
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = vue_plugin_path,
+        languages = { "vue" },
+      },
+    },
+  },
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "vue",
+  },
+})
+
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {
