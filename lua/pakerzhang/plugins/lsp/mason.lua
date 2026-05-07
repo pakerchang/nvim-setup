@@ -28,7 +28,7 @@ mason_lspconfig.setup({
     "tailwindcss",
     "lua_ls",
     "emmet_ls",
-    "volar",
+    "vue_ls",
     "yamlls",
     "marksman",
     "jsonls",

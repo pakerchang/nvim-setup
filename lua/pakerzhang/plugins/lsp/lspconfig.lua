@@ -80,7 +80,7 @@ local servers = {
   "cssls",
   "tailwindcss",
   "emmet_ls",
-  "volar",
+  "vue_ls",
   "marksman",
   "yamlls",
   "dockerls",
