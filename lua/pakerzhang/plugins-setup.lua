@@ -27,9 +27,6 @@ require("lazy").setup({
   { "tpope/vim-surround" },
   { "inkarkat/vim-ReplaceWithRegister" },
 
-  -- commenting with gc
-  { "numToStr/Comment.nvim" },
-
   -- file explorer
   { "nvim-tree/nvim-tree.lua" },
 
