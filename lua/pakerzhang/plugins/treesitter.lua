@@ -14,17 +14,15 @@ treesitter.setup({
   indent = {
     enable = false,
   },
-  context_commentstring = {
-    enable = true,
+  -- 常用語言：啟動時就確保已裝
+  ensure_installed = {
+    "lua", "vim", "vimdoc", "query",
+    "javascript", "typescript", "tsx",
+    "html", "css", "json", "yaml", "toml",
+    "vue", "markdown", "markdown_inline",
+    "bash", "dockerfile",
+    "gitignore", "gitcommit",
   },
-  -- enable autotagging (w/ nvim-ts-autotag plugin)
-  autotag = {
-    enable = true,
-  },
-  -- ensure these language parsers are installed
-  ensure_installed = "all",
+  -- 偶爾編輯的語言：開檔時自動補裝該 parser
   auto_install = true,
 })
-
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.tsx.filetype_to_parsername = { "javascript", "javascript.jsx", "typescript.tsx" }

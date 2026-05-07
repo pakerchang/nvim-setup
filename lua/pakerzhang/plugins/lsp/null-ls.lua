@@ -9,7 +9,6 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- for conciseness
 local formatting = null_ls.builtins.formatting -- to setup formatters
-local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
 -- configure null_ls
 null_ls.setup({
@@ -18,15 +17,19 @@ null_ls.setup({
     --  to disable file types use
     formatting.prettier,
     formatting.stylua, -- lua formatter
-    diagnostics.eslint_d.with({
+    -- eslint_d 在 none-ls 被拆到 none-ls-extras
+    require("none-ls.diagnostics.eslint_d").with({
       condition = function(utils)
         return utils.root_has_file({
           ".eslintrc.js",
           ".eslintrc",
           ".eslintrc.json",
-          ".eslintrc.cjs,",
+          ".eslintrc.cjs",
           ".eslintrc.yml",
           ".eslintrc.yaml",
+          "eslint.config.js",
+          "eslint.config.mjs",
+          "eslint.config.cjs",
         })
       end,
       diagnostics_format = "eslint: #{m}\n(#{c})",
@@ -34,7 +37,7 @@ null_ls.setup({
   },
   -- configure format on save
   on_attach = function(current_client, bufnr)
-    if current_client.supports_method("textDocument/formatting") then
+    if current_client:supports_method("textDocument/formatting") then
       vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
       vim.api.nvim_create_autocmd("BufWritePre", {
         group = augroup,
