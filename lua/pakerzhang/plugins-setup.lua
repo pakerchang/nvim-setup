@@ -110,6 +110,26 @@ require("lazy").setup({
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
     ft = { "markdown" },
   },
+
+  -- minimap (vscode-style; built-in git diff / diagnostic / treesitter highlight)
+  -- layout=split：獨立側邊 split，不會像 float 蓋住 main buffer
+  -- auto_enable=false：啟動時不自動開，由 <leader>mt toggle
+  {
+    "Isrothy/neominimap.nvim",
+    version = "v3.*.*",
+    lazy = false,
+    init = function()
+      vim.g.neominimap = {
+        auto_enable = false,
+        layout = "split",
+        split = {
+          minimap_width = 16,
+          direction = "right",
+          fix_width = true,
+        },
+      }
+    end,
+  },
 }, {
   ui = { border = "rounded" },
   install = { missing = true },

@@ -45,6 +45,7 @@ keymap.set("n", "<C-t><C-l>", ":vertical resize -30<CR>")
 keymap.set("n", "<C-t><C-r>", ":vertical resize +30<CR>")
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
+keymap.set("n", "<leader>tT", ":tabnew | terminal<CR>") -- open new tab with terminal (claude code cli)
 keymap.set("n", "<leader>te", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<Tab>", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<S-Tab>", ":tabp<CR>") --  go to previous tab
@@ -77,6 +78,11 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 
 -- Markdown in-buffer rendering toggle
 keymap.set("n", "<leader>mp", ":RenderMarkdown toggle<CR>")
+
+-- Minimap (neominimap) toggle
+keymap.set("n", "<leader>mt", ":Neominimap Toggle<CR>") -- toggle global minimap
+keymap.set("n", "<leader>mb", ":Neominimap BufToggle<CR>") -- toggle for current buffer
+keymap.set("n", "<leader>mw", ":Neominimap WinToggle<CR>") -- toggle for current window
 
 -- Reload personal Lua modules + re-source init.lua
 -- 跳過 plugins-setup 以避免重跑 lazy.setup() 造成 plugin 狀態錯亂
