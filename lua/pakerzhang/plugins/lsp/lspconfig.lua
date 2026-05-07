@@ -10,9 +10,10 @@ local keymap = vim.keymap
 local on_attach = function(client, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
 
-  keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
+  keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>", opts)
   keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
   keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+  keymap.set("n", "gr", "<cmd>FzfLua lsp_references<CR>", opts) -- find references (who imports / uses this)
   keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
   keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
   keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
@@ -21,7 +22,7 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
   keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
-  keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
+  keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
 
   -- typescript via ts_ls 內建 code actions
   if client.name == "ts_ls" then
