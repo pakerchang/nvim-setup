@@ -85,6 +85,24 @@ require("lazy").setup({
   },
   { "HiPhish/rainbow-delimiters.nvim" },
 
+  -- treesitter-aware commentstring（Nvim 0.10+ 內建 gc 在 Vue/JSX 嵌入語言會用錯註解，這個 plugin 補回 context_commentstring 行為）
+  -- folke/ts-comments.nvim 是 nvim-ts-context-commentstring 作者推薦的 0.10+ 繼任者
+  -- vue 預設只給 <!-- -->，要靠下面 spec 指明：在 <script> 用 //、在 <style> 用 /* */
+  -- jsx/tsx 已在 ts-comments 內建支援
+  {
+    "folke/ts-comments.nvim",
+    event = "VeryLazy",
+    opts = {
+      lang = {
+        vue = {
+          "<!-- %s -->",
+          script_element = "// %s",
+          style_element = "/* %s */",
+        },
+      },
+    },
+  },
+
   -- auto pairs / tags
   { "windwp/nvim-autopairs" },
   { "windwp/nvim-ts-autotag" },
