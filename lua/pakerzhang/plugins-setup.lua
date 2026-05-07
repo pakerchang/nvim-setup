@@ -93,12 +93,10 @@ require("lazy").setup({
   -- dashboard
   { "goolord/alpha-nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 
-  -- markdown preview
+  -- markdown in-buffer rendering (replaces archived iamcco/markdown-preview.nvim)
   {
-    "iamcco/markdown-preview.nvim",
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end,
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
     ft = { "markdown" },
   },
 }, {

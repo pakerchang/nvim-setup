@@ -75,8 +75,8 @@ keymap.set("n", "<leader>gs", "<cmd>FzfLua git_status<cr>")   -- changed files w
 -- Restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
--- Markdown Preview
-keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<CR>")
+-- Markdown in-buffer rendering toggle
+keymap.set("n", "<leader>mp", ":RenderMarkdown toggle<CR>")
 
 -- Reload personal Lua modules + re-source init.lua
 -- 跳過 plugins-setup 以避免重跑 lazy.setup() 造成 plugin 狀態錯亂
