@@ -37,6 +37,8 @@ mason_lspconfig.setup({
   },
   -- auto-install configured servers (with lspconfig)
   automatic_installation = true, -- not the same as ensure_installed
+  -- 由 lspconfig.lua 用 vim.lsp.enable 統一啟動，避免把 stylua 等非 LSP 也誤啟
+  automatic_enable = false,
 })
 
 mason_null_ls.setup({
