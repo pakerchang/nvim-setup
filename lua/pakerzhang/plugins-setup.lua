@@ -148,6 +148,13 @@ require("lazy").setup({
       }
     end,
   },
+
+  -- JSON / YAML structural browser (sprite atlas, manifests)
+  -- requires: brew install jq + pip install yq (Python, not brew yq)
+  {
+    "gennaro-tedesco/nvim-jqx",
+    ft = { "json", "yaml" },
+  },
 }, {
   ui = { border = "rounded" },
   install = { missing = true },

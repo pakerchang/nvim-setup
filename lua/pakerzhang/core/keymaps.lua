@@ -84,6 +84,15 @@ keymap.set("n", "<leader>mt", ":Neominimap Toggle<CR>") -- toggle global minimap
 keymap.set("n", "<leader>mb", ":Neominimap BufToggle<CR>") -- toggle for current buffer
 keymap.set("n", "<leader>mw", ":Neominimap WinToggle<CR>") -- toggle for current window
 
+-- Open current file in macOS default app (SVG / PNG → Preview, PDF → Preview, html → browser)
+keymap.set("n", "<leader>P", function()
+  vim.fn.system({ "open", vim.fn.expand("%:p") })
+end, { desc = "Preview file in macOS default app" })
+
+-- nvim-jqx (JSON / YAML structural browse — sprite atlas, manifests)
+keymap.set("n", "<leader>jl", ":JqxList<CR>")  -- list top-level keys in quickfix (X to peek, <CR> to jump)
+keymap.set("n", "<leader>jq", ":JqxQuery<CR>") -- run jq expression interactively
+
 -- Reload personal Lua modules + re-source init.lua
 -- 跳過 plugins-setup 以避免重跑 lazy.setup() 造成 plugin 狀態錯亂
 -- 適合：改 keymap / option / plugin config 後快速試用
