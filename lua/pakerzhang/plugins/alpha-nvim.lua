@@ -65,9 +65,9 @@ dashboard.section.header.val = banner
 -- Menu
 dashboard.section.buttons.val = {
   dashboard.button("e", "  Open Explorer", ":NvimTreeToggle<CR>"),
-  dashboard.button("f", "  Find file", "<cmd>Telescope find_files<cr>"),
+  dashboard.button("f", "  Find file", "<cmd>FzfLua files<cr>"),
   dashboard.button("s", "  Settings", ":e $MYVIMRC<CR>"),
-  dashboard.button("u", "  Update plugins", ":PackerUpdate<CR>"),
+  dashboard.button("u", "  Update plugins", ":Lazy update<CR>"),
   dashboard.button("q", "  Quit", ":qa<CR>"),
 }
 

@@ -46,6 +46,32 @@ keymap.set("n", "<C-t><C-r>", ":vertical resize +30<CR>")
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tT", ":tabnew | terminal<CR>") -- open new tab with terminal (claude code cli)
+-- Vertical terminal picker: list existing vertical instances + "open new"
+-- id 1 reserved for the float bound to <C-t><C-i>
+keymap.set("n", "<leader>tv", function()
+  local tt = require("toggleterm.terminal")
+  local verticals = vim.tbl_filter(function(t)
+    return t.direction == "vertical"
+  end, tt.get_all())
+
+  local items = vim.tbl_map(function(t)
+    return string.format("#%d  %s", t.id, t.name or "vertical")
+  end, verticals)
+  table.insert(items, "+ open new")
+
+  vim.ui.select(items, { prompt = "Vertical terminal:" }, function(_, idx)
+    if not idx then return end
+    if idx <= #verticals then
+      verticals[idx]:toggle()
+    else
+      local used = {}
+      for _, t in ipairs(tt.get_all(true)) do used[t.id] = true end
+      local id = 2
+      while used[id] do id = id + 1 end
+      vim.cmd(id .. "ToggleTerm direction=vertical size=80")
+    end
+  end)
+end, { desc = "Pick / open vertical terminal" })
 keymap.set("n", "<leader>te", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<Tab>", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<S-Tab>", ":tabp<CR>") --  go to previous tab

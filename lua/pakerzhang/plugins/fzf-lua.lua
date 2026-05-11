@@ -17,20 +17,17 @@ fzf.setup({
         .. [[--smart-case --max-columns=4096 ]]
         .. [[--glob=!node_modules --glob=!.git --glob=!public --glob=!dist]],
   },
-  -- list: alt+j/k；preview: ctrl+h/l
+  -- list nav 走 fzf default (ctrl-j/k); 額外保留 alt-j/k 做備援
+  -- 不綁 ctrl-h/l：ctrl-h 在 macOS terminal 等同 backspace、ctrl-l 是 fzf 清 query 的預設，避免衝突
   keymap = {
     fzf = {
-      ["alt-k"] = "up",                     -- 上一筆 (list)
-      ["alt-j"] = "down",                   -- 下一筆 (list)
-      ["ctrl-h"] = "preview-page-up",       -- preview 上一頁
-      ["ctrl-l"] = "preview-page-down",     -- preview 下一頁
-      ["ctrl-q"] = "select-all+accept",     -- 全選送 quickfix
+      ["alt-k"] = "up",                 -- 上一筆 (list, 備援；主要用 ctrl-k)
+      ["alt-j"] = "down",               -- 下一筆 (list, 備援；主要用 ctrl-j)
+      ["ctrl-q"] = "select-all+accept", -- 全選送 quickfix
     },
     builtin = {
-      ["<M-k>"] = "preview-page-up",
+      ["<M-k>"] = "preview-page-up",   -- preview page (builtin previewer)
       ["<M-j>"] = "preview-page-down",
-      ["<C-h>"] = "preview-page-up",
-      ["<C-l>"] = "preview-page-down",
     },
   },
 })
